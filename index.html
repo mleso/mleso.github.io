@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--
+  HOW TO EDIT THIS PAGE (no coding needed)
+  Open this file in any text editor (Notepad, TextEdit, VS Code) and use Find (Ctrl/Cmd+F).
+
+  1. EMAIL: search "matt.lesowski@gmail.com" (appears in the links, contact section and structured data).
+  2. LINKEDIN / GITHUB: search "linkedin.com" or "github.com" and replace the URLs.
+  3. DOMAIN: search "https://mattlesowski.com/" and replace with your real domain (4 spots).
+  4. BIO TEXT: look for <section id="about">. Edit the text between the <p> and </p> tags.
+  5. WORK LIST: look for <section id="work">. Each item is a <dt> (title) and <dd> (description).
+     Copy a whole <div>...</div> block to add another item.
+  6. COLORS: edit the values at the top of the <style> block (--bg, --ink, --accent, etc).
+  Always keep your full name in the <title> and the first heading.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matt Lesowski | Data Science and Winery Operations in Oregon</title>
+<meta name="description" content="Matt Lesowski is a data scientist in Oregon's Willamette Valley with hands-on winery experience in production and hospitality, and a focus on data-driven vineyard decisions.">
+<meta name="author" content="Matt Lesowski">
+<link rel="canonical" href="https://mattlesowski.com/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Matt Lesowski | Data Science and Winery Operations">
+<meta property="og:description" content="Data scientist in Oregon's Willamette Valley with hands-on winery experience.">
+<meta property="og:url" content="https://mattlesowski.com/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='8' fill='%233f4a33'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' fill='%23efebe3' text-anchor='middle'%3EML%3C/text%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Matt Lesowski",
+  "url": "https://mattlesowski.com/",
+  "email": "mailto:matt.lesowski@gmail.com",
+  "jobTitle": "Data Scientist",
+  "description": "Data scientist in Oregon's Willamette Valley with hands-on winery experience in production and hospitality.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "OR",
+    "addressCountry": "US"
+  },
+  "knowsAbout": ["Data science", "Data analysis", "Viticulture analytics", "Winemaking operations"],
+  "sameAs": [
+    "https://www.linkedin.com/in/mattlesowski",
+    "https://github.com/mleso"
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #efebe3;        /* light stone */
+    --surface: #e3dccf;   /* tan */
+    --ink: #2b2620;       /* dark walnut */
+    --muted: #6b6153;     /* warm gray-brown */
+    --accent: #3f4a33;    /* moss green */
+    --earth: #7a5c3e;     /* soil brown */
+    --line: #cfc6b6;
+    --contour: rgba(122, 92, 62, 0.16);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1f1c18;
+      --surface: #2a2620;
+      --ink: #ece6dc;
+      --muted: #b3a898;
+      --accent: #a9b98f;
+      --earth: #c9a67f;
+      --line: #3d372f;
+      --contour: rgba(201, 166, 127, 0.12);
+      color-scheme: dark;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.125rem;
+    line-height: 1.65;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--earth); outline-offset: 3px; }
+  .wrap { max-width: 60rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  header.site { border-bottom: 1px solid var(--line); }
+  header.site .wrap {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 1rem; flex-wrap: wrap; padding-top: 1.1rem; padding-bottom: 1.1rem;
+  }
+  .wordmark {
+    font-family: "Times New Roman", Times, serif; font-weight: 600; font-size: 1.1rem;
+    color: var(--ink); text-decoration: none;
+  }
+  nav a {
+    font-size: .95rem; font-weight: 500; margin-left: 1.5rem;
+    color: var(--muted); text-decoration: none;
+  }
+  nav a:hover { color: var(--ink); }
+
+  .hero { position: relative; overflow: hidden; padding: 5rem 0 4.5rem; border-bottom: 1px solid var(--line); }
+  .hero svg.contours { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+  .hero svg.contours path { fill: none; stroke: var(--contour); stroke-width: 1.25; }
+  .hero .wrap { position: relative; z-index: 1; }
+  h1 {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 600;
+    font-size: clamp(2.6rem, 7vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: 0 0 1.25rem;
+  }
+  .lede {
+    max-width: 34rem; font-family: "Times New Roman", Times, serif;
+    font-size: 1.3rem; line-height: 1.5; margin: 0 0 2.25rem; color: var(--muted);
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center; padding: 0; margin: 0; list-style: none; }
+  .btn {
+    display: inline-block; padding: .65rem 1.25rem;
+    background: var(--accent); color: var(--bg);
+    font-weight: 600; font-size: .95rem; text-decoration: none;
+    border-radius: 3px;
+  }
+  .btn:hover { background: var(--ink); color: var(--bg); }
+  .textlink { font-weight: 500; font-size: .95rem; }
+
+  section { padding: 4rem 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 600; font-size: 1.6rem; margin: 0;
+  }
+  .cols { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  @media (min-width: 52rem) {
+    .cols { grid-template-columns: 13rem 1fr; gap: 3rem; }
+  }
+  .prose { max-width: 38rem; }
+  .prose p { margin: 0 0 1.1rem; }
+
+  dl.facts { margin: 0; display: grid; gap: 1.75rem; max-width: 40rem; }
+  dl.facts div { padding-top: 1rem; border-top: 1px solid var(--line); }
+  dl.facts div:first-child { padding-top: 0; border-top: none; }
+  dl.facts dt { font-weight: 600; font-size: 1.1rem; margin-bottom: .2rem; }
+  dl.facts dd { margin: 0; color: var(--muted); }
+
+  .band { background: var(--surface); }
+
+  .email-line { font-family: "Times New Roman", Times, serif; font-size: 1.35rem; margin: 0 0 1.25rem; }
+  .email-line a { color: var(--ink); }
+
+  footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Matt Lesowski</a>
+    <nav aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <svg class="contours" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <path d="M-20 520 C 180 470, 330 540, 520 480 S 860 400, 1220 450"/>
+      <path d="M-20 450 C 160 400, 320 470, 510 410 S 850 330, 1220 380"/>
+      <path d="M-20 380 C 150 330, 310 400, 500 340 S 840 260, 1220 310"/>
+      <path d="M-20 310 C 140 260, 300 330, 490 270 S 830 190, 1220 240"/>
+      <path d="M-20 240 C 130 190, 290 260, 480 200 S 820 120, 1220 170"/>
+    </svg>
+    <div class="wrap">
+      <h1>Matt Lesowski</h1>
+      <p class="lede">Oregon-based spatial data science student. I choose to work where technical analysis meets hands-on exploration and fieldwork.</p>
+      <ul class="actions">
+        <li><a class="btn" href="mailto:matt.lesowski@gmail.com">Email me</a></li>
+        <li><a class="textlink" href="https://www.linkedin.com/in/mattlesowski" rel="me">LinkedIn</a></li>
+        <li><a class="textlink" href="https://github.com/mleso" rel="me">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap cols">
+      <h2>About</h2>
+      <div class="prose">
+        <p>I'm Matt Lesowski, a 22-year-old student with interests in geographic information systems (GIS), remote sensing, and agricultural analysis.</p>
+        <p>My current work centers on understanding the relationship between people, places, and the environments around them through geospatial technology. I'm particularly interested in applying spatial analysis, satellite imagery, and drone-based data collection to real-world challenges, such as environmental monitoring and vineyard management.</p>
+        <p>Alongside my academic work, I've gained hands-on experience in Oregon's wine industry, working across tasting room operations and wine production. This experience has shaped my interest in viticulture and terroir. I'm continuing to develop my skills in spatial analysis to apply technical expertise to meaningful agricultural applications.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap cols">
+      <h2>Contact</h2>
+      <div class="prose">
+        <p>The best way to reach me is by email.</p>
+        <p class="email-line"><a href="mailto:matt.lesowski@gmail.com">matt.lesowski@gmail.com</a></p>
+        <p>You can also find me on <a href="https://www.linkedin.com/in/mattlesowski" rel="me">LinkedIn</a> and <a href="https://github.com/mleso" rel="me">GitHub</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Matt Lesowski, Willamette Valley, Oregon</div>
+</footer>
+
+</body>
+</html>
