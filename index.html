@@ -154,6 +154,17 @@
   .email-line { font-family: "Times New Roman", Times, serif; font-size: 1.35rem; margin: 0 0 1.25rem; }
   .email-line a { color: var(--ink); }
 
+  .copy {
+    margin-left: .75rem; padding: .3rem .8rem; vertical-align: middle;
+    font: 600 .85rem "Times New Roman", Times, serif;
+    background: transparent; color: var(--accent);
+    border: 1px solid var(--accent); border-radius: 3px; cursor: pointer;
+  }
+  .copy:hover { background: var(--accent); color: var(--bg); }
+  .copy:focus-visible { outline: 2px solid var(--earth); outline-offset: 3px; }
+  .copy-status { margin-left: .6rem; font-size: .9rem; color: var(--muted); }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; color: var(--muted); font-size: .9rem; }
 </style>
 </head>
@@ -182,9 +193,9 @@
       <h1>Matt Lesowski</h1>
       <p class="lede">Oregon-based spatial data science student. I choose to work where technical analysis meets hands-on exploration and fieldwork.</p>
       <ul class="actions">
-        <li><a class="btn" href="mailto:matt.lesowski@gmail.com">Email me</a></li>
-        <li><a class="textlink" href="https://www.linkedin.com/in/mattlesowski" rel="me">LinkedIn</a></li>
-        <li><a class="textlink" href="https://github.com/mleso" rel="me">GitHub</a></li>
+        <li><a class="btn" href="#contact">Email me</a></li>
+        <li><a class="textlink" href="https://www.linkedin.com/in/mattlesowski" rel="me noopener" target="_blank">LinkedIn</a></li>
+        <li><a class="textlink" href="https://github.com/mleso" rel="me noopener" target="_blank">GitHub</a></li>
       </ul>
     </div>
   </div>
@@ -205,8 +216,10 @@
       <h2>Contact</h2>
       <div class="prose">
         <p>The best way to reach me is by email.</p>
-        <p class="email-line"><a href="mailto:matt.lesowski@gmail.com">matt.lesowski@gmail.com</a></p>
-        <p>You can also find me on <a href="https://www.linkedin.com/in/mattlesowski" rel="me">LinkedIn</a> and <a href="https://github.com/mleso" rel="me">GitHub</a>.</p>
+        <p class="email-line"><a href="mailto:matt.lesowski@gmail.com">matt.lesowski@gmail.com</a>
+          <button type="button" class="copy" id="copy-email" data-email="matt.lesowski@gmail.com">Copy</button>
+          <span class="copy-status" id="copy-status" role="status"></span></p>
+        <p>You can also find me on <a href="https://www.linkedin.com/in/mattlesowski" rel="me noopener" target="_blank">LinkedIn</a> and <a href="https://github.com/mleso" rel="me noopener" target="_blank">GitHub</a>.</p>
       </div>
     </div>
   </section>
@@ -216,5 +229,28 @@
   <div class="wrap">Matt Lesowski, Willamette Valley, Oregon</div>
 </footer>
 
+<script>
+  (function () {
+    var btn = document.getElementById('copy-email');
+    var status = document.getElementById('copy-status');
+    if (!btn) return;
+    function done(ok) {
+      status.textContent = ok ? 'Copied' : 'Select the address to copy it';
+      setTimeout(function () { status.textContent = ''; }, 2500);
+    }
+    btn.addEventListener('click', function () {
+      var email = btn.getAttribute('data-email');
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(function () { done(true); }, function () { done(false); });
+      } else {
+        var t = document.createElement('textarea');
+        t.value = email; t.setAttribute('readonly', ''); t.style.position = 'absolute'; t.style.left = '-9999px';
+        document.body.appendChild(t); t.select();
+        var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(t); done(ok);
+      }
+    });
+  })();
+</script>
 </body>
 </html>
